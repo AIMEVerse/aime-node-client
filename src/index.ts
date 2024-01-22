@@ -1,6 +1,6 @@
 import { Wormholes,WormholeEvents,_xem} from "wormholes"
 // Import the Xpell Wormholes and Event Manager modules (Xpell for Node.js)
-
+import * as aime from "./aime-api/aime.js"
 
 async function main() {
 
@@ -12,10 +12,7 @@ async function main() {
     // Aime server url and port (use wss for secure connection)
     const wormholeUrl = "ws://127.0.0.1:3030/"
 
-    const getEnvironmentNameMessage = {
-        _module: "xenvironment",
-        _op: "get-name"
-    }
+    
 
     
 
@@ -23,7 +20,7 @@ async function main() {
         console.log("Wormhole is open")
         // console.log(Wormholes.ws);
         
-        const res = await Wormholes.sendSync(getEnvironmentNameMessage)
+        const res = await Wormholes.sendSync(aime.env._get_environment_name)
         console.log(res)
     })
 
