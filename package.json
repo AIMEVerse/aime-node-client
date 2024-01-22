@@ -3,12 +3,21 @@
   "version": "1.0.0",
   "description": "Aime Node JS Client for Server to Server Communication",
   "main": "index.js",
+  "type":"module", 
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -p .",
+    "dev": "tsc && node ./dist/index.js",
+    "server": "node ./dist/index.js"
   },
   "keywords": [
     "AIME"
   ],
   "author": "Tamir Fridman",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "wormholes": "^1.0.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
